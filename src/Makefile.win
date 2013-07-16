@@ -1,0 +1,39 @@
+# Project: Ecrase Engine
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o logger.o logManager.o window.o $(RES)
+LINKOBJ  = main.o logger.o logManager.o window.o $(RES)
+LIBS =  -L"D:/Dev-Cpp/lib" -L"D:/Dev-Cpp/mingw32/lib" -L"D:/glew-1.9.0-win64/glew-1.9.0/lib" -L"D:/glfw3/lib-mingw" -L"D:/Dev-Cpp/lib" -L"D:/Dev-Cpp/lib/gcc" -L"D:/Dev-Cpp/mingw32/lib" ../Dev-Cpp/lib/glew32.lib ../Dev-Cpp/lib/glfw3dll.a ../Dev-Cpp/lib/libmingw32.a  
+INCS =  -I"D:/Dev-Cpp/include"  -I"D:/Dev-Cpp/include"  -I"D:/Dev-Cpp/include/GL"  -I"D:/Dev-Cpp/include/GLFW" 
+CXXINCS =  -I"D:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"D:/Dev-Cpp/include/c++/3.4.2/backward"  -I"D:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"D:/Dev-Cpp/include/c++/3.4.2"  -I"D:/Dev-Cpp/include"  -I"D:/Dev-Cpp/include"  -I"D:/Dev-Cpp/include/GL"  -I"D:/Dev-Cpp/include/GLFW" 
+BIN  = "Ecrase Engine.exe"
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before "Ecrase Engine.exe" all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Ecrase Engine.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+logger.o: logger.cpp
+	$(CPP) -c logger.cpp -o logger.o $(CXXFLAGS)
+
+logManager.o: logManager.cpp
+	$(CPP) -c logManager.cpp -o logManager.o $(CXXFLAGS)
+
+window.o: window.cpp
+	$(CPP) -c window.cpp -o window.o $(CXXFLAGS)

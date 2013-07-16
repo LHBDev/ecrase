@@ -1,6 +1,8 @@
 #include <cstdlib>
 #include <iostream>
+
 #include <GLFW/glfw3.h>
+
 
 int main(int argc, char *argv[])
 {
@@ -9,6 +11,7 @@ int main(int argc, char *argv[])
     GLFWwindow* window;
     if (!glfwInit())
         return -1;
+        
 
     window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
     if (!window)
